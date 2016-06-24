@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercice 4</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+   <div class="boutons">
+     <button id="bouton1">1</button>
+     <button id="bouton2">2</button>
+     <button id="bouton3">3</button>
+     <button id="bouton4">4</button>
+     <button id="bouton5">5</button>
+   </div>
+   <div class="rectangle"></div>
+   <script>
+   $(document).ready(function(){
+     //rectangle initial
+     var hauteur = 10;
+     const couleur = 'orange';
+
+     $('.rectangle').css('height',+ hauteur +'px');
+     $('.rectangle').css('width','100px');
+     $('.rectangle').css('background-color',couleur);
+
+     //Quand on clic sur bouton 1
+       $('#bouton1').click(function(){
+         //Récupérer la taille (h) du rectangle
+         var nombre = $('.rectangle').height();
+         //Si la hauteur >= 100
+         if (nombre >= 100){
+           //La hauteur = 10px
+           nombre = 10;
+         } else {
+           //La hauteur prend 10
+           nombre += 10;
+           }
+         $('.rectangle').css('height',+ nombre +'px');
+       });
+
+     //Quand on clic sur bouton 2
+       //: RectangleColor passe au vert
+       $('#bouton2').click(function(){
+         $('.rectangle').css('background-color','green');
+       });
+     //Quand on clic sur bouton 3
+       //: RectangleColor : revient à la couleur constante
+       $('#bouton3').click(function(){
+         $('.rectangle').css('background-color',couleur);
+       });
+     //Quand on clic sur bouton 4
+       //: Fait disparaitre le rectangle
+       $('#bouton4').click(function(){
+         $('.rectangle').hide();
+       });
+     //Quand on clic sur bouton 5
+       //: Fait apparaitre le rectangle
+       $('#bouton5').click(function(){
+         $('.rectangle').show();
+       })
+   })
+   </script>
+ </body>
+
+</html>
